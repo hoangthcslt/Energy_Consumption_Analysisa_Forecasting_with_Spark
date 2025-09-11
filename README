@@ -1,0 +1,37 @@
+Big Data ETL and Machine Learning Pipeline for Energy Consumption Forecasting
+Project Overview
+This project implements an end-to-end Big Data and Machine Learning pipeline to analyze and predict household electricity consumption. Utilizing a large-scale dataset of over 2 million records spanning four years from the UCI ML Repository, the primary goal was to build a robust predictive model capable of forecasting energy usage.
+The entire workflow was architected on a Big Data ecosystem to handle the volume and velocity of the data, showcasing a complete process from raw data ingestion to model evaluation. The project is divided into two main phases: (1) an in-depth Exploratory Data Analysis (EDA) to uncover consumption patterns, and (2) the development of a supervised machine learning model for forecasting.
+Technical Implementation & Key Features
+Big Data Ecosystem:
+Storage: The raw dataset was stored on the Hadoop Distributed File System (HDFS) to ensure scalability and fault tolerance.
+Processing Engine: Apache Spark (with PySpark) was used as the core engine for all data manipulation, aggregation, and model training tasks, leveraging its in-memory, distributed computing capabilities.
+Data Engineering & Analytics Pipeline:
+ETL (Extract, Transform, Load): A robust data pipeline was constructed in a Jupyter Notebook environment. Key steps included:
+Ingesting data from HDFS into a Spark DataFrame.
+Data Cleansing: Handling over 25,000 missing values and performing data type casting from string to numeric formats.
+Feature Engineering: Creating critical time-based features (hour, day_of_week, month) from the raw timestamp, which proved essential for model accuracy.
+Exploratory Data Analysis (EDA): Aggregations were performed on Spark, with results visualized using Matplotlib and Seaborn. This analysis revealed distinct daily, weekly, and seasonal consumption patterns (e.g., peak usage in the evenings and on weekends).
+Machine Learning Model:
+Modeling: The forecasting task was framed as a regression problem. A Gradient-Boosted Trees (GBTRegressor) model from the Spark MLlib library was selected for its high performance.
+Workflow: The VectorAssembler was used to transform the feature set into the required vector format. The data was split into 80% for training and 20% for testing.
+Evaluation: The model's performance was rigorously assessed on the test set, achieving a Root Mean Squared Error (RMSE) of 0.1333 kW. This result indicates a high level of accuracy in predicting energy consumption.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Project : Pipeline Xử lý Dữ liệu Lớn (Big Data) và Học máy (Machine Learning) để Dự báo Tiêu thụ Năng lượng
+Tổng quan Dự án
+Dự án này triển khai một pipeline Big Data và Machine Learning hoàn chỉnh từ đầu đến cuối để phân tích và dự báo mức tiêu thụ điện của hộ gia đình. Sử dụng bộ dữ liệu quy mô lớn với hơn 2 triệu bản ghi trong khoảng thời gian bốn năm từ Kho lưu trữ Học máy UCI, mục tiêu chính là xây dựng một mô hình dự báo mạnh mẽ có khả năng dự đoán việc sử dụng năng lượng.
+Toàn bộ quy trình làm việc được kiến trúc hóa trên một hệ sinh thái Big Data để xử lý khối lượng và tốc độ của dữ liệu, thể hiện một quy trình hoàn chỉnh từ việc nhập dữ liệu thô đến đánh giá mô hình. Dự án được chia thành hai giai đoạn chính: (1) Phân tích Dữ liệu Khám phá (EDA) chuyên sâu để tìm ra các mẫu hình tiêu thụ, và (2) Phát triển một mô hình học máy có giám sát để dự báo.
+Triển khai Kỹ thuật & Các Tính năng Chính
+Hệ sinh thái Big Data:
+Lưu trữ: Bộ dữ liệu thô được lưu trữ trên Hệ thống tệp phân tán Hadoop (HDFS) để đảm bảo khả năng mở rộng và chịu lỗi.
+Công cụ Xử lý: Apache Spark (với PySpark) được sử dụng làm công cụ cốt lõi cho tất cả các tác vụ xử lý, tổng hợp dữ liệu và huấn luyện mô hình, tận dụng khả năng tính toán phân tán và xử lý trong bộ nhớ.
+Pipeline Kỹ thuật Dữ liệu và Phân tích:
+ETL (Extract, Transform, Load): Một pipeline dữ liệu mạnh mẽ đã được xây dựng trong môi trường Jupyter Notebook. Các bước chính bao gồm:
+Đọc dữ liệu từ HDFS vào một Spark DataFrame.
+Làm sạch Dữ liệu: Xử lý hơn 25.000 giá trị bị thiếu và thực hiện chuyển đổi kiểu dữ liệu từ dạng chuỗi sang các định dạng số.
+Kỹ thuật Đặc trưng (Feature Engineering): Tạo ra các đặc trưng thời gian quan trọng (hour, day_of_week, month) từ dấu thời gian ban đầu, điều này đã được chứng minh là cực kỳ cần thiết cho độ chính xác của mô hình.
+Phân tích Dữ liệu Khám phá (EDA): Các phép tính tổng hợp được thực hiện trên Spark, với kết quả được trực quan hóa bằng Matplotlib và Seaborn. Phân tích này đã khám phá ra các mẫu hình tiêu thụ riêng biệt theo ngày, tuần và mùa (ví dụ: mức sử dụng cao nhất vào buổi tối và cuối tuần).
+Mô hình Machine Learning:
+Mô hình hóa: Bài toán dự báo được xác định là một bài toán hồi quy (regression). Mô hình Gradient-Boosted Trees (GBTRegressor) từ thư viện Spark MLlib đã được chọn vì hiệu suất cao.
+Quy trình: VectorAssembler được sử dụng để chuyển đổi tập hợp các đặc trưng thành định dạng vector theo yêu cầu. Dữ liệu được chia thành 80% để huấn luyện và 20% để kiểm thử.
+Đánh giá: Hiệu suất của mô hình đã được đánh giá nghiêm ngặt trên tập kiểm thử, đạt được Sai số Trung bình Bình phương Gốc (RMSE) là 0.1333 kW. Kết quả này cho thấy độ chính xác cao trong việc dự đoán mức tiêu thụ năng lượng.
